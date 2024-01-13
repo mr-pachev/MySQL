@@ -1,21 +1,16 @@
-CREATE database Minions;
-USE Minions;
-CREATE TABLE minions(
-	id INT AUTO_INCREMENT NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    age INT NOT NULL,
-    CONSTRAINT pk_id
-    PRIMARY KEY(id)
+CREATE TABLE employees (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
 );
-CREATE TABLE towns (
-    town_id INT AUTO_INCREMENT NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_town_id PRIMARY KEY (town_id)
+
+CREATE TABLE categories(
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL
 );
-ALTER TABLE towns
-DROP COLUMN town_id;
-ALTER TABLE towns
-ADD COLUMN id INT PRIMARY KEY AUTO_INCREMENT NOT NULL;
-ALTER TABLE minions
-ADD COLUMN town_id INT,
-ADD CONSTRAINT fk_town_id FOREIGN KEY (town_id) REFERENCES towns(id);
+
+CREATE TABLE products(
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    category_id INT NOT NULL
+);
