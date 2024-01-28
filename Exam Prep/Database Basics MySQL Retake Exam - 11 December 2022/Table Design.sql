@@ -1,5 +1,5 @@
-CREATE DATABASE airlines_db’s;
-USE airlines_db’s;
+CREATE DATABASE airlines_db;
+USE airlines_db;
 
 CREATE TABLE countries(
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -48,5 +48,11 @@ CREATE TABLE flights(
 CREATE TABLE flights_passengers(
 	flight_id INT,
     passenger_id INT,
-    KEY (flight_id, passenger_id)
+    KEY pk_flights_passengers (flight_id, passenger_id),
+			CONSTRAINT fk_flights_passengers_flights
+			FOREIGN KEY (flight_id)
+			REFERENCES flights(id),
+			CONSTRAINT fk_flights_passengers_passengers
+			FOREIGN KEY (passenger_id)
+			REFERENCES passengers(id)
 );
