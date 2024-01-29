@@ -1,5 +1,5 @@
 SELECT
-	UPPER(CONCAT(LEFT(p.last_name, 2), p.country_id)) AS flight_code,
+	UPPER(CONCAT(LEFT(p.last_name, 2), p.country_id)) AS 'flight_code',
     CONCAT(p.first_name, ' ', p.last_name) AS 'full_name',
     p.country_id
 FROM passengers AS p
