@@ -87,3 +87,4 @@ CREATE TABLE property_transactions(
 			FOREIGN KEY (buyer_id)
 			REFERENCES buyers(id)
 );
+
