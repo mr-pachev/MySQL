@@ -1,3 +1,4 @@
+DELIMITER $$
 CREATE PROCEDURE usp_raise_salaries(department_name VARCHAR(50))
 BEGIN
 	UPDATE employees
