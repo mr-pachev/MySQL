@@ -7,7 +7,7 @@ BEGIN
     RETURN future_value_of_the_initial_sum;
 END$$
 
-CREATE PROCEDURE usp_calculate_future_value_for_account(id INT, interest_rate DOUBLE)
+CREATE PROCEDURE usp_calculate_future_value_for_account(id INT, interest_rate DECIMAL(19, 4))
 BEGIN
 	SELECT id AS 'account_id',
 			first_name,
