@@ -1,4 +1,4 @@
-CREATE PROCEDURE usp_get_employees_salary_above(given_number DECIMAL (19.4))
+CREATE PROCEDURE usp_get_employees_salary_above(given_number DECIMAL (19,4))
 BEGIN
 	SELECT first_name, last_name
     FROM employees
