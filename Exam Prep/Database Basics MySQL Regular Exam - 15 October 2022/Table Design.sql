@@ -35,7 +35,13 @@ CREATE TABLE orders(
     table_id INT NOT NULL,
     waiter_id INT NOT NULL,
     order_time TIME NOT NULL,
-    payed_status TINYINT(1)
+    payed_status TINYINT(1),
+    CONSTRAINT fk_orders_waiters
+	FOREIGN KEY(waiter_id)
+    REFERENCES waiters(id),
+    CONSTRAINT fk_orders_tables
+	FOREIGN KEY(table_id)
+    REFERENCES tables(id)
 );
 
 CREATE TABLE orders_clients(
@@ -54,7 +60,7 @@ CREATE TABLE orders_products(
 	order_id INT,
     product_id INT,
     KEY pk_orders_products (order_id, product_id),
-	CONSTRAINT fk_oc_orders
+	CONSTRAINT fk_orders_products_orders
 			FOREIGN KEY (order_id)
 			REFERENCES orders(id),
 			CONSTRAINT fk_orders_clients_product_id
