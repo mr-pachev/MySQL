@@ -70,8 +70,3 @@ CREATE TABLE games_categories(
 		REFERENCES categories(id)
 );
 
-SELECT COLUMN_KEY FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_SCHEMA = DATABASE()
-AND COLUMN_NAME IN ('id','game_id','team_id',
- 'address_id', 'leader_id', 'category_id')
-ORDER BY TABLE_NAME, COLUMN_KEY;
