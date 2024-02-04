@@ -6,6 +6,6 @@ SELECT
 FROM categories AS c
 JOIN games_categories AS gc ON c.id = gc.category_id
 JOIN games AS g ON gc.game_id = g.id
-WHERE g.rating >= '9.5'
 GROUP BY c.id
+HAVING MAX(g.rating) >= 9.5
 ORDER BY `games_count` DESC, c.name;
