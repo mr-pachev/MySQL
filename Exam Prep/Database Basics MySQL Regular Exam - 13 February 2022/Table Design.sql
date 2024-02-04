@@ -1,3 +1,6 @@
+CREATE DATABASE online_stores;
+USE  online_stores;
+
 CREATE TABLE brands(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(40) NOT NULL UNIQUE
@@ -13,12 +16,12 @@ CREATE TABLE reviews(
     content	TEXT,
     rating DECIMAL(10,2) NOT NULL,
     picture_url VARCHAR(80) NOT NULL,
-    published_at DATETIME
+    published_at DATETIME NOT NULL
 );
 
 CREATE TABLE products(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(40) NOT NULL UNIQUE,
+    name VARCHAR(40) NOT NULL,
     price DECIMAL(19,2) NOT NULL,
     quantity_in_stock INT,
     description TEXT,
