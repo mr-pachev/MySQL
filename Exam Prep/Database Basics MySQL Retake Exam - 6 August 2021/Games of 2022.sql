@@ -10,4 +10,5 @@ WHEN MONTH(release_date) IN (10, 11, 12) THEN 'Q4'
 END) AS 'quarter',
 (SELECT name FROM teams WHERE id = g.team_id)   AS 'team_name'
 FROM games AS g
-WHERE name LIKE '%2' AND MONTH(release_date) % 2 = 0;
+WHERE name LIKE '%2' AND MONTH(release_date) % 2 = 0
+ORDER BY `quarter`;
