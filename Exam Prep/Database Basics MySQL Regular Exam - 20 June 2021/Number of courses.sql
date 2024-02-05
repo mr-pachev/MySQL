@@ -3,7 +3,7 @@ SELECT
     c.make,
     c.mileage,
 	COUNT(cor.from_address_id) AS 'count_of_courses',
-	AVG(cor.bill) AS 'avg_bill'
+	ROUND(AVG(cor.bill), 2) AS 'avg_bill'
 FROM cars AS c
 JOIN courses AS cor ON c.id = cor.car_id
 GROUP BY c.id
