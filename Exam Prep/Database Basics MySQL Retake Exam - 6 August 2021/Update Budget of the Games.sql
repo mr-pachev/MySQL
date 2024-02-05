@@ -1,4 +1,4 @@
-CREATE PROCEDURE min_game_rating(min_game_rating FLOAT)
+CREATE PROCEDURE udp_update_budget(min_game_rating FLOAT)
 BEGIN
 	UPDATE games AS g
     LEFT JOIN games_categories AS gc ON g.id = gc.game_id
