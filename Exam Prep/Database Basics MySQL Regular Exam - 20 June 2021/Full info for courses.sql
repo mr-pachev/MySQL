@@ -1,9 +1,6 @@
 SELECT
 	a.name,
-    (CASE
-    WHEN HOUR(cor.start) BETWEEN 6 AND 20 THEN 'Day'
-    WHEN HOUR(cor.start) BETWEEN 21 AND 5 THEN 'Night'
-    END) AS 'day_time',
+    IF(HOUR(cor.start) BETWEEN 6 AND 20, 'Day', 'Night') AS 'day_time',
     bill,
     full_name,
     make,
