@@ -1,4 +1,4 @@
-![Certificate](https://softuni.bg/certificates/certificates/converttoimage/202686?code=a5184117)
+![Certificate](https://softuni.bg/certificates/certificates/converttoimage/202686?code=a5184117))
 
 # MySQL
 
